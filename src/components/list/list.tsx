@@ -1,12 +1,15 @@
-export const List = () => (
-  <>
-    <>1</>
-    <>2</>
-    <>3</>
-    <>4</>
-    <>5</>
-    <>6</>
-    <>7</>
-    <>8</>
-  </>
-);
+import { ListItem } from "./list-item";
+
+interface IProps {
+  pokemons: IBaseName[];
+}
+
+export const List = ({ pokemons }: IProps) => {
+  return (
+    <ul>
+      {pokemons.map((pokemon) => (
+        <ListItem key={pokemon.name} name={pokemon.name} />
+      ))}
+    </ul>
+  );
+};
